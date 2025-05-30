@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vespa.hub - Catalogo Ricambi Vespa di Scirtò Gabriele</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background-color: #f9f9f9;
+      line-height: 1.6;
+    }
+    
+    header {
+      background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0,0,0,0.6)), url('background2.0.jpeg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: white;
+      padding: 350px 30px;
+      text-align: center;
+      position: relative;
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    header h1 {
+      font-size: 3.5rem;
+      margin: 0;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+      font-weight: 300;
+    }
+    
+    header p {
+      font-size: 1.2rem;
+      margin: 10px 0 30px;
+      opacity: 0.9;
+    }
+    
+    nav {
+      margin-top: 20px;
+    }
+    
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: 500;
+      padding: 10px 20px;
+      border: 2px solid transparent;
+      border-radius: 25px;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+    
+    nav a:hover {
+      background-color: rgba(255,255,255,0.2);
+      border-color: white;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    main {
+      padding: 40px 20px;
+    }
+    
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      color: #2c3e50;
+      margin-bottom: 40px;
+      position: relative;
+    }
+    
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 3px;
+      background-color: #27ae60;
+      margin: 15px auto;
+    }
+    
+    .category-section {
+      margin-bottom: 60px;
+    }
+    
+    .category-title {
+      text-align: center;
+      font-size: 2rem;
+      color: #34495e;
+      margin-bottom: 30px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    
+    .category-title::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 2px;
+      background-color: #27ae60;
+      margin: 10px auto;
+    }
+    
+    .prodotti {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 30px;
+    }
+    
+    .prodotto {
+      background-color: white;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .prodotto:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+    
+    .prodotto::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #27ae60, #2ecc71);
+    }
+    
+    .prodotto img {
+      max-width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+    
+    .prodotto h3 {
+      margin: 15px 0 10px;
+      font-size: 1.3rem;
+      color: #2c3e50;
+    }
+    
+    .prodotto .descrizione {
+      color: #666;
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
+    
+    .configurazione-completa {
+      border: 2px solid #27ae60;
+    }
+    
+    .configurazione-completa::before {
+      background: linear-gradient(90deg, #e74c3c, #c0392b);
+    }
+    
+    .configurazione-completa .descrizione {
+      text-align: left;
+      font-size: 0.85rem;
+      line-height: 1.4;
+    }
+    
+    @media (max-width: 768px) {
+      header {
+        padding: 80px 20px;
+        min-height: 60vh;
+        background-attachment: scroll;
+      }
+      
+      header h1 {
+        font-size: 2.5rem;
+      }
+      
+      nav a {
+        display: block;
+        margin: 10px 0;
+      }
+      
+      .prodotti {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>🛵 Vespa.hub</h1>
+      <p>Ricambi originali e tuning per la tua Vespa</p>
+      <nav>
+        <a href="#cilindri">🔧 Cilindri</a>
+        <a href="#carburatori">⚙️ Carburatori</a>
+        <a href="#marmitte">🔊 Marmitte</a>
+        <a href="#accessori">🛠️ Accessori</a>
+        <a href="#configurazioni">🏁 Configurazioni</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h2 class="section-title">Catalogo Ricambi</h2>
+    
+    <!-- Sezione Cilindri -->
+    <div class="category-section" id="cilindri">
+      <h3 class="category-title">🔧 Cilindri e Kit Motore</h3>
+      <div class="prodotti">
+        <div class="prodotto">
+          <img src="cilindro.jpg" alt="Cilindro 130 Polini 50 special">
+          <h3>Cilindro 130cc Polini</h3>
+          <p class="descrizione">Kit cilindro Polini 130cc per Vespa 50 Special, ideale per il tuning sportivo. Include pistone, segmenti e guarnizioni.</p>
+        </div>
+</div>
+
+<div class="prodotti">
+        <div class="prodotto">
+          <img src="rapporti.avif" alt="rapporti secondari 24-72 denti dritti">
+          <h3>Rapporti secondari 24-72 denti dritti SIP</h3>
+          <p class="descrizione">Rapporti ideali per sviluppare una buona vespa insieme alla spinta che sprigiona il cilindro 130.</p>
+        </div>
+<div class="prodotti">
+        <div class="prodotto">
+          <img src="accensione.webp" alt="accensione vespa">
+          <h3>Kit completo accensione SIP con cono 19</h3>
+          <p class="descrizione">Accensione potente e affidabile come aggiornamento per i modelli classici di Vespa.</p>
+        </div>
+    </div>
+
+<div class="prodotti">
+        <div class="prodotto">
+          <img src="frizione.jpg" alt="frizione vespa">
+          <h3>Frizione Fabbri competizione 10 molle per 50 special</h3>
+          <p class="descrizione">Corpo frizione costruito in ergal ricavato dal pieno, mozzetto centrale costruito in acciaio ricavato dal pieno, rivoluzionario sistema a molle dissociate; stabilizzate e certificate. Funzionamento garantito su motori con massimo 24 cv con piattello spingidisco su cuscinetti a sfera.</p>
+        </div>
+    </div>
+
+<div class="prodotti">
+        <div class="prodotto">
+          <img src="albero_m.png" alt="albero motore polini">
+          <h3>Albero motore Polini cono 10 corsa 51</h3>
+          <p class="descrizione">Albero motore di ultima generazione, con biella ricavata a pieno. Riguardo la fasatura dell’aspirazione è modificata per migliorare le prestazioni del motore e il nuovo disegno delle spalle è stato ottimizzato per ridurre le vibrazioni. Sicuri e affidabili, il montaggio è consigliato sia con motori originali che potenziati. </p>
+        </div>
+    </div>
+
+
+
+
+</div>
+
+    <!-- Sezione Carburatori -->
+    <div class="category-section" id="carburatori">
+      <h3 class="category-title">⚙️ Carburatori</h3>
+      <div class="prodotti">
+        <div class="prodotto">
+          <img src="carburatore.jpg" alt="Carburatore 19.19 dell'orto 50 special">
+          <h3>Carburatore 19.19 Dell'Orto</h3>
+          <p class="descrizione">Carburatore originale Dell'Orto per Vespa 50 Special, perfetto per ottenere prestazioni ottimali. Completo di getti e regolazioni.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sezione Marmitte -->
+    <div class="category-section" id="marmitte">
+      <h3 class="category-title">🔊 Marmitte e Scarichi</h3>
+      <div class="prodotti">
+          <audio id="mioAudio" src="vespa.ogg"></audio>
+  <button onclick="toggleAudio()">▶️ Riproduci / Pausa Rombo Vespa</button>
+
+<script>
+  const audio = document.getElementById('mioAudio');
+
+  function toggleAudio() {
+    if (audio.paused) {
+      audio.play();
+    } else {
+      audio.pause();
+    }
+  }
+</script>
+        <div class="prodotto">
+          <img src="marmitta.jpeg" alt="Marmitta Proma 50 special">
+          <h3>Marmitta Proma Racing</h3>
+          <p class="descrizione">Marmitta sportiva Proma per aumentare le prestazioni della tua Vespa 50 Special. Design racing con sound caratteristico.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sezione Accessori -->
+    <div class="category-section" id="accessori">
+      <h3 class="category-title">🛠️ Accessori e Ricambi</h3>
+      <div class="prodotti">
+        <div class="prodotto">
+          <img src="filtro.jpeg" alt="Filtro aria sportivo">
+          <h3>Filtro Aria Polini</h3>
+          <p class="descrizione">Filtro aria ad alte prestazioni per migliorare l'aspirazione del motore. Materiale filtrante di qualità superiore.</p>
+        </div>
+        
+        <div class="prodotto">
+          <img src="candela.jpg" alt="Candela NGK">
+          <h3>Candela NGK Racing</h3>
+          <p class="descrizione">Candela da competizione NGK per accensione ottimale e prestazioni superiori. Elettrodi in materiali pregiati.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sezione Configurazioni Complete -->
+    <div class="category-section" id="configurazioni">
+      <h3 class="category-title">🏁 Configurazioni Complete</h3>
+      <div class="prodotti">
+        <div class="prodotto configurazione-completa">
+          <h3>Kit Racing Completo 130cc</h3>
+          <p class="descrizione">
+            <strong>Configurazione performance per Vespa 50 Special:</strong><br><br>
+            📦 <strong>Include:</strong><br>
+            • Cilindro Polini 130cc con pistone<br>
+            • Carburatore Dell'Orto 19.19<br>
+            • Marmitta Proma Racing<br>
+            • Filtro aria Polini<br>
+            • Candela NGK Racing<br>
+            • Kit guarnizioni completo<br><br>
+            🚀 <strong>Prestazioni:</strong> +40% di potenza<br>
+            ⚡ <strong>Velocità max:</strong> ~95 km/h<br>
+            🔧 <strong>Installazione:</strong> Consigliata da meccanico
+          </p>
+        </div>
+        
+        <div class="prodotto configurazione-completa">
+          <h3>Kit Touring Affidabile</h3>
+          <p class="descrizione">
+            <strong>Configurazione equilibrata per uso quotidiano:</strong><br><br>
+            📦 <strong>Include:</strong><br>
+            • Cilindro originale <br>
+            • Carburatore Dell'Orto 16.16<br>
+            • Marmitta originale silenziosa<br>
+            • Filtro aria standard<br>
+            • Candela NGK standard<br>
+            • Kit manutenzione completo<br><br>
+            🛣️ <strong>Prestazioni:</strong> Affidabilità massima<br>
+            ⛽ <strong>Consumi:</strong> Ottimizzati<br>
+            🔧 <strong>Manutenzione:</strong> Ridotta
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
